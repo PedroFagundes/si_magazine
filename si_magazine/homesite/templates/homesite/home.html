@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>SI Magazine</title>
+
+	<!-- LOAD STATIC -->
+	{% load staticfiles %}
+	<!-- LOAD CSS -->
+	<link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+</head>
+<body>
+	{% for post in posts %}
+		<div><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></div>
+	{% endfor %}
+</body>
+</html>
