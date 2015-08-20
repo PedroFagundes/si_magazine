@@ -28,10 +28,10 @@
 
 				<div class="media-body">
 					<h3  class="entry-title">
-						<a href="#" rel="bookmark">{{ post.title }}</a>
+						<a href="{% url 'post_detail' post.slug %}" rel="bookmark">{{ post.title }}</a>
 					</h3>
 					<div class="entry-meta">
-						<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">3 hours ago</time></a></span>
+						<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">3 horas atrás</time></a></span>
 					</div>
 				</div>
 			</article>
@@ -46,8 +46,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 1st_post.slug %}">{{ 1st_post.title }}</a> </h3>
 				<div class="entry-meta">
-					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-					<span class="entry-author"> by <a href="blog.html">{{ 1st_post.author }}</a></span>
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+					<span class="entry-author"> por <a href="blog.html">{{ 1st_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -70,8 +70,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 2nd_post.slug %}">{{ 2nd_post.title }}</a> </h3>
 				<div class="entry-meta">
-				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-				<span class="entry-author"> by <a href="blog.html">{{ 2nd_post.author }}</a></span>
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+				<span class="entry-author"> por <a href="blog.html">{{ 2nd_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -94,8 +94,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 3rd_post.slug %}">{{ 3rd_post.title }}</a> </h3>
 				<div class="entry-meta">
-				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-				<span class="entry-author"> by <a href="blog.html">{{ 3rd_post.author }}</a></span>
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+				<span class="entry-author"> por <a href="blog.html">{{ 3rd_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -118,8 +118,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 4th_post.slug %}">{{ 4th_post.title }}</a> </h3>
 				<div class="entry-meta">
-				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-				<span class="entry-author"> by <a href="blog.html">{{ 4th_post.author}}</a></span>
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+				<span class="entry-author"> por <a href="blog.html">{{ 4th_post.author}}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -142,8 +142,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 5th_post.slug %}">{{ 5th_post.title }}</a> </h3>
 				<div class="entry-meta">
-					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-					<span class="entry-author"> by <a href="blog.html">{{ 5th_post.author }}</a></span>
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+					<span class="entry-author"> por <a href="blog.html">{{ 5th_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -166,8 +166,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 6th_post.slug %}">{{ 6th_post.title }}</a> </h3>
 				<div class="entry-meta">
-				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-				<span class="entry-author"> by <a href="blog.html">{{ 6th_post.author }}</a></span>
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+				<span class="entry-author"> por <a href="blog.html">{{ 6th_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -190,8 +190,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 7th_post.slug %}">{{ 7th_post.title }}</a> </h3>
 				<div class="entry-meta">
-					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-					<span class="entry-author"> by <a href="blog.html">{{ 7th_post.author }}</a></span>
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+					<span class="entry-author"> por <a href="blog.html">{{ 7th_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">
@@ -214,8 +214,8 @@
 			<header class="entry-header">
 				<h3 class="entry-title"><a href="{% url 'post_detail' 8th_post.slug %}">{{ 8th_post.title }}</a> </h3>
 				<div class="entry-meta">
-					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-					<span class="entry-author"> by <a href="blog.html">{{ 8th_post.author }}</a></span>
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+					<span class="entry-author"> por <a href="blog.html">{{ 8th_post.author }}</a></span>
 				</div>
 			</header>
 			<figure class="entry-thumbnail">

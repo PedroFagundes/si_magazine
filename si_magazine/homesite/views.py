@@ -19,7 +19,7 @@ class Home(ListView):
 	    context['6th_post']       = Posts.objects.all().order_by('-id')[5]
 	    context['7th_post']       = Posts.objects.all().order_by('-id')[6]
 	    context['8th_post']       = Posts.objects.all().order_by('-id')[7]
-	    context['whatsnew_posts'] = Posts.objects.all()[:10]
+	    context['whatsnew_posts'] = Posts.objects.all().order_by('-id')[:10]
 	    context['tags']           = Tags.objects.all()
 	    context['categories']     = Categories.objects.all()
 	    return context
