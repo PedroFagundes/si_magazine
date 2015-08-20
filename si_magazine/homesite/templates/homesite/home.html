@@ -1,4 +1,4 @@
-{% extends "homesite/base.html" %}
+{% extends "homesite/base-homesite.html" %}
 {% load staticfiles %}
 
 	{% block posts_should_know %}
@@ -16,25 +16,25 @@
 	{% endblock posts_should_know %}
 
 	{% block posts_whats_new %}
-		{% for post in posts %}
+		{% for post in whatsnew_posts %}
 			<article class="type-post style-media-list media col-sm-6 col-md-12">
-			<!-- to disable lazy loading, remove data-src and data-src-retina -->
-			<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post.image_link }}" data-src-retina="{{ post.image_link }}" width="80" height="80" class="media-object pull-left" alt="">
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post.image_link }}" data-src-retina="{{ post.image_link }}" width="80" height="80" class="media-object pull-left" alt="">
 
-			<!--fallback for no javascript browsers-->
-			<noscript>
-				<img src="{{ post.image_link }}" alt="">
-			</noscript>
+				<!--fallback for no javascript browsers-->
+				<noscript>
+					<img src="{{ post.image_link }}" alt="">
+				</noscript>
 
-			<div class="media-body">
-				<h3  class="entry-title">
-					<a href="#" rel="bookmark">{{ post.title }}</a>
-				</h3>
-				<div class="entry-meta">
-					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">3 hours ago</time></a></span>
+				<div class="media-body">
+					<h3  class="entry-title">
+						<a href="#" rel="bookmark">{{ post.title }}</a>
+					</h3>
+					<div class="entry-meta">
+						<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">3 hours ago</time></a></span>
+					</div>
 				</div>
-			</div>
-		</article>
+			</article>
 		{% endfor %}
 	{% endblock posts_whats_new %}
 
@@ -43,31 +43,192 @@
 			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
 				<a href="blog.html">{{ 1st_post.category }}</a>
 			</div>
-
 			<header class="entry-header">
-				<h3 class="entry-title"><a href="single.html">{{ 1st_post.title }}</a> </h3>
+				<h3 class="entry-title"><a href="{% url 'post_detail' 1st_post.slug %}">{{ 1st_post.title }}</a> </h3>
 				<div class="entry-meta">
 					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
 					<span class="entry-author"> by <a href="blog.html">{{ 1st_post.author }}</a></span>
 				</div>
 			</header>
-
 			<figure class="entry-thumbnail">
-
-				<a href="single.html" class="overlay overlay-primary"></a>
-
+				<a href="{% url 'post_detail' 1st_post.slug %}" class="overlay overlay-primary"></a>
 				<!-- to disable lazy loading, remove data-src and data-src-retina -->
 				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 1st_post.image_link }}" data-src-retina="{{ 1st_post.image_link }}" width="680" height="452" alt="">
-
 				<!--fallback for no javascript browsers-->
 				<noscript>
 					<img src="{% static 'uploads/680x452_2.jpg' %}" alt="">
 				</noscript>
-
 			</figure>
-
 		</article>
 	{% endblock 1st_post %}
+
+	{% block 2nd_post %}
+		<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="">{{ 2nd_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 2nd_post.slug %}">{{ 2nd_post.title }}</a> </h3>
+				<div class="entry-meta">
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+				<span class="entry-author"> by <a href="blog.html">{{ 2nd_post.author }}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 2nd_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 2nd_post.image_link }}" data-src-retina="{{ 2nd_post.image_link }}" width="480" height="280" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+				<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 2nd_post %}
+
+	{% block 3rd_post %}
+		<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="">{{ 3rd_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 3rd_post.slug %}">{{ 3rd_post.title }}</a> </h3>
+				<div class="entry-meta">
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+				<span class="entry-author"> by <a href="blog.html">{{ 3rd_post.author }}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 3rd_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 3rd_post.image_link }}" data-src-retina="{{ 3rd_post.image_link }}" width="480" height="280" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+				<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 3rd_post %}
+
+	{% block 4th_post %}
+		<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="blog.html">{{ 4th_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 4th_post.slug %}">{{ 4th_post.title }}</a> </h3>
+				<div class="entry-meta">
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+				<span class="entry-author"> by <a href="blog.html">{{ 4th_post.author}}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 4th_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_2.jpg' %}" data-src-retina="{% static 'uploads/720x420_2.jpg' %}" width="480" height="280" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+				<img src="{% static 'uploads/480x280_2.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 4th_post %}
+
+	{% block 5th_post %}
+		<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="blog.html">{{ 5th_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 5th_post.slug %}">{{ 5th_post.title }}</a> </h3>
+				<div class="entry-meta">
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+					<span class="entry-author"> by <a href="blog.html">{{ 5th_post.author }}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 5th_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 5th_post.image_link }}" data-src-retina="{{ 5th_post.image_link }}" width="680" height="452" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+					<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 5th_post %}
+
+	{% block 6th_post %}
+		<article class="entry style-grid style-hero hero-lg-larger type-post col-md-4 col-lg-6 colheight-sm-1 colheight-lg-2">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="blog.html">{{ 6th_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 6th_post.slug %}">{{ 6th_post.title }}</a> </h3>
+				<div class="entry-meta">
+				<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+				<span class="entry-author"> by <a href="blog.html">{{ 6th_post.author }}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 6th_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 6th_post.image_link }}" data-src-retina="{{ 6th_post.image_link }}" width="380" height="435" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+					<img src="{% static 'uploads/380x435_1.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 6th_post %}
+
+	{% block 7th_post %}
+		<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="blog.html">{{ 7th_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 7th_post.slug %}">{{ 7th_post.title }}</a> </h3>
+				<div class="entry-meta">
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+					<span class="entry-author"> by <a href="blog.html">{{ 7th_post.author }}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 7th_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 7th_post.image_link }}" data-src-retina="{{ 7th_post.image_link }}" width="680" height="452" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+					<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 7th_post %}
+
+	{% block 8th_post %}
+		<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+			<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+				<a href="blog.html">{{ 8th_post.category }}</a>
+			</div>
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="{% url 'post_detail' 8th_post.slug %}">{{ 8th_post.title }}</a> </h3>
+				<div class="entry-meta">
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
+					<span class="entry-author"> by <a href="blog.html">{{ 8th_post.author }}</a></span>
+				</div>
+			</header>
+			<figure class="entry-thumbnail">
+				<a href="{% url 'post_detail' 8th_post.slug %}" class="overlay overlay-primary"></a>
+				<!-- to disable lazy loading, remove data-src and data-src-retina -->
+				<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 8th_post.image_link }}" data-src-retina="{{ 8th_post.image_link }}" width="680" height="452" alt="">
+				<!--fallback for no javascript browsers-->
+				<noscript>
+					<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
+				</noscript>
+			</figure>
+		</article>
+	{% endblock 8th_post %}
 
 	{% block tags %}
 		{% for tag in tags %}

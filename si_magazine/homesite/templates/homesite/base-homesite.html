@@ -46,7 +46,7 @@
 			<div class="header-navbar-inner container">
 			
 				<div id="brand" class="navbar-brand">
-					<a href="index.html" rel="bookmark">
+					<a href="{% url 'home' %}" rel="bookmark">
 
 						<!-- to disable lazy loading, remove data-src and data-src-retina -->
 						<img src="{% static 'img/logo.png' %}" data-src="{% static 'img/logo.png' %}" data-src-retina="{% static 'img/logo-retina.png' %}" width="244" height="56" alt="">
@@ -97,7 +97,7 @@
 							<div class="col-md-2 col-sm-2 bg-bar">
 								<strong class="subnav-header">Pages</strong>
 								<ul class="subnav-full">
-									<li><a href="index.html">Blog 3 Columns</a></li>
+									<li><a href="{% url 'home' %}">Blog 3 Columns</a></li>
 									<li><a href="blog.html">Blog 2 Columns</a></li>
 									<li><a href="blog-grids.html">Blog Grids</a></li>
 									<li><a href="reviews.html">Reviews Archive</a></li>
@@ -166,7 +166,7 @@
 						<a href="#" data-toggle="li">Features</a>
 						<div class="subnav-wrapper">
 							<ul class="subnav">
-								<li class="active"><a href="index.html">Blog 3 Columns</a></li>
+								<li class="active"><a href="{% url 'home' %}">Blog 3 Columns</a></li>
 								<li><a href="blog.html">Blog 2 Columns</a></li>
 								<li><a href="blog-grids.html">Blog Grids</a></li>
 								<li><a href="reviews.html">Reviews Archive</a></li>
@@ -481,72 +481,24 @@
 				<div class="col-lg-6 col-xl-5">
 
 					<div class="row">
+
 						<!-- 1st POST -->
 						{% block 1st_post %}
-							
+
 						{% endblock 1st_post %}
-						
 						<!-- END 1st POST -->
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="">Entertainment</a>
-							</div>
+						<!-- 2nd POST -->
+						{% block 2nd_post %}
 
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
-							
-							<figure class="entry-thumbnail">
+						{% endblock 2nd_post %}
+						<!-- END 2nd POST -->
 
-								<a href="single.html" class="overlay overlay-primary"></a>
+						<!-- 3rd POST -->
+						{% block 3rd_post %}
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_1.jpg' %}" data-src-retina="{% static 'uploads/720x420_1.jpg' %}" width="480" height="280" alt="">
-
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
-								</noscript>
-
-							</figure>
-
-						</article>
-
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="blog.html">Social Media</a>
-							</div>
-
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">Postman will send notifications to your flashy smartphone about popular people and their latest shouts.</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
-							
-							<figure class="entry-thumbnail">
-
-								<a href="single.html" class="overlay overlay-primary"></a>
-
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_3.jpg' %}" data-src-retina="{% static 'uploads/720x420_3.jpg' %}" width="480" height="280" alt="">
-
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/480x280_3.jpg' %}" alt="">
-								</noscript>
-
-							</figure>
-
-						</article>
+						{% endblock 3rd_post %}
+						<!-- END 3rd POST -->
 
 					</div><!--/.row-->
 
@@ -556,155 +508,35 @@
 
 					<div class="row">
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="blog.html">Event</a>
-							</div>
+						<!-- 4th POST -->
+						{% block 4th_post %}
 
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">Rumor: The long awaited update for Retina Display is ready to be annaunced on the next event held by them</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
-							
-							<figure class="entry-thumbnail">
+						{% endblock 4th_post %}
+						<!-- END 4th POST -->
 
-								<a href="single.html" class="overlay overlay-primary"></a>
+						<!-- 5th POST -->
+						{% block 5th_post %}
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_2.jpg' %}" data-src-retina="{% static 'uploads/720x420_2.jpg' %}" width="480" height="280" alt="">
+						{% endblock 5th_post %}
+						<!-- END 5th POST -->
 
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/480x280_2.jpg' %}" alt="">
-								</noscript>
+						<!-- 6th POST -->
+						{% block 6th_post %}
 
-							</figure>
+						{% endblock 6th_post %}
+						<!-- END 6th POST -->
 
-						</article>
+						<!-- 7th POST -->
+						{% block 7th_post %}
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="blog.html">Tips</a>
-							</div>
+						{% endblock 7th_post %}
+						<!-- END 7th POST -->
 
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">This can be use for hand picked featured posts by staffs - sit voluptatem accusantium doloremque laudantium</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
+						<!-- 8th POST -->
+						{% block 8th_post %}
 
-							<figure class="entry-thumbnail">
-
-								<a href="single.html" class="overlay overlay-primary"></a>
-
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/680x452_4.jpg' %}" data-src-retina="{% static 'uploads/1024x680_4.jpg' %}" width="680" height="452" alt="">
-
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
-								</noscript>
-
-							</figure>
-
-						</article>
-
-						<article class="entry style-grid style-hero hero-lg-larger type-post col-md-4 col-lg-6 colheight-sm-1 colheight-lg-2">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="blog.html">Technology</a>
-							</div>
-
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
-							
-							<figure class="entry-thumbnail">
-
-								<a href="single.html" class="overlay overlay-primary"></a>
-
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/380x435_1.jpg' %}" data-src-retina="{% static 'uploads/620x709_1.jpg' %}" width="380" height="435" alt="">
-
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/380x435_1.jpg' %}" alt="">
-								</noscript>
-
-							</figure>
-
-						</article>
-
-						<article class="entry style-grid style-hero type-post col-md-6 col-lg-6 colheight-sm-1">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="blog.html">Event</a>
-							</div>
-
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">Rumor: The long awaited update for Retina Display is ready to be annaunced on the next event held by them</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
-							
-							<figure class="entry-thumbnail">
-
-								<a href="single.html" class="overlay overlay-primary"></a>
-
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/680x452_1.jpg' %}" data-src-retina="{% static 'uploads/1024x680_1.jpg' %}" width="680" height="452" alt="">
-
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/680x452_1.jpg' %}" alt="">
-								</noscript>
-
-							</figure>
-
-						</article>
-
-						<article class="entry style-grid style-hero type-post col-md-6 col-lg-6 colheight-sm-1">
-						
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="blog.html">Social Media</a>
-							</div>
-
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="single.html">Postman will send notifications to your flashy smartphone about popular people and their latest shouts.</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 hours ago</time></a></span>
-									<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
-								</div>
-							</header>
-							
-							<figure class="entry-thumbnail">
-
-								<a href="single.html" class="overlay overlay-primary"></a>
-
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_4.jpg' %}" data-src-retina="{% static 'uploads/720x420_4.jpg' %}" width="480" height="280" alt="">
-
-								<!--fallback for no javascript browsers-->
-								<noscript>
-									<img src="{% static 'uploads/480x280_4.jpg' %}" alt="">
-								</noscript>
-
-							</figure>
-
-						</article>
+						{% endblock 8th_post %}
+						<!-- END 8th POST -->
 
 					</div><!--/.row-->
 
