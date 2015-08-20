@@ -1,17 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<title>SI Magazine</title>
+{% extends "homesite/base.html" %}
+{% load staticfiles %}
+	{% block posts_should_know %}
+		{% for post in posts %}
+			<article class="entry type-post style-thumbnail-text col-sm-6 col-md-2 colheight-sm-1">
+				<div class="entry-meta">
+					<span class="category"><a href="blog.html">{{ post.category }}</a></span>
+				</div>
 
-	<!-- LOAD STATIC -->
-	{% load staticfiles %}
-	<!-- LOAD CSS -->
-	<link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
-</head>
-<body>
-	{% for post in posts %}
-		<div><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></div>
-	{% endfor %}
-</body>
-</html>
+				<h3 class="entry-title">
+					<a href="{% url 'post_detail' post.slug %}" rel="bookmark">{{ post.title }}</a>
+				</h3>
+			</article>
+		{% endfor %}
+	{% endblock posts_should_know %}
+
+	{% block posts_whats_new %}
+		{% for post in posts %}
+			<article class="type-post style-media-list media col-sm-6 col-md-12">
+			<!-- to disable lazy loading, remove data-src and data-src-retina -->
+			<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post.image_link }}" data-src-retina="{{ post.image_link }}" width="80" height="80" class="media-object pull-left" alt="">
+
+			<!--fallback for no javascript browsers-->
+			<noscript>
+				<img src="{{ post.image_link }}" alt="">
+			</noscript>
+
+			<div class="media-body">
+				<h3  class="entry-title">
+					<a href="#" rel="bookmark">{{ post.title }}</a>
+				</h3>
+				<div class="entry-meta">
+					<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">3 hours ago</time></a></span>
+				</div>
+			</div>
+		</article>
+		{% endfor %}
+	{% endblock posts_whats_new %}
+
+	{% block tags %}
+		{% for tag in tags %}
+			<a href="#">{{ tag.name }}</a>
+		{% endfor %}
+	{% endblock tags %}

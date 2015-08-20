@@ -13,22 +13,31 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Categories',
+            fields=[
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
+                ('name', models.CharField(max_length=50, verbose_name='Category')),
+            ],
+        ),
+        migrations.CreateModel(
             name='Posts',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
                 ('title', models.CharField(max_length=100, verbose_name='Título')),
                 ('image_link', models.CharField(max_length=200, verbose_name='Imagem')),
                 ('post_body', models.TextField(max_length=10000)),
                 ('pub_date', models.DateField()),
+                ('pub_hour', models.TimeField()),
                 ('is_active', models.BooleanField(default=True)),
-                ('slug', models.SlugField()),
+                ('slug', models.SlugField(blank=True)),
                 ('author', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('category', models.ForeignKey(to='posts.Categories')),
             ],
         ),
         migrations.CreateModel(
             name='Tags',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, verbose_name='ID', primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=50, verbose_name='Tag')),
             ],
         ),
