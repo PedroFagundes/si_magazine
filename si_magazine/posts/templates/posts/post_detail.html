@@ -580,7 +580,7 @@
 
 						<div class="entry-meta indented">
 							<span class="author">por <a href="blog.html">{{ post.author }}</a></span>
-							<span class="entry-date"><a href="blog.html">on <time datetime="2013-07-04T23:26:34+00:00">{{ post.pub_date }}</time></a></span>
+							<span class="entry-date"><a href="blog.html">em <time datetime="{{ post.pub_date }}">{{ post.pub_date }}</time></a></span>
 							<span class="category">em <a href="blog.html">{{ post.category }}</a></span>
 						</div>
 
@@ -588,7 +588,7 @@
 
 							<p class="lead">
 							{% autoescape off %}
-								{{ post.post_body|linebreaks }}
+								{{ post.content|linebreaks }}
 							{% endautoescape %}
 							</p>
 

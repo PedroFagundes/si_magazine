@@ -4,17 +4,20 @@ from django.utils.text import slugify
 
 from django.contrib.auth.models import User
 
+from ckeditor.fields import RichTextField
+
 class Posts(models.Model):
-	title 	   = models.CharField('Título', max_length=100, null=False, blank=False)
-	image_link = models.CharField('Imagem', max_length=200)
-	post_body  = models.TextField('Corpo da Postagem', max_length=10000)
-	author     = models.ForeignKey(User)
-	tags       = models.ManyToManyField('Tags')
-	category   = models.ForeignKey('Categories')
-	pub_date   = models.DateField()
-	pub_hour   = models.TimeField()
-	is_active  = models.BooleanField('Corpo da Postagem', default=True)
-	slug       = models.SlugField(blank=True)
+	title 	           = models.CharField('Título', max_length=100, null=False, blank=False)
+	image_link         = models.CharField('Imagem', max_length=200)
+	short_description  = models.TextField('Corpo da Postagem', max_length=10000)
+	content            = RichTextField()
+	author             = models.ForeignKey(User)
+	tags               = models.ManyToManyField('Tags')
+	category           = models.ForeignKey('Categories')
+	pub_date           = models.DateField()
+	pub_hour           = models.TimeField()
+	is_active          = models.BooleanField(default=True)
+	slug               = models.SlugField(blank=True)
 
 	def __str__(self):
 		return self.title

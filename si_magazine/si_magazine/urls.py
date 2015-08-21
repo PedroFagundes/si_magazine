@@ -7,5 +7,6 @@ from homesite.views import Home
 urlpatterns = [
 	url(r'^$', Home.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^posts/', include('posts.urls'))
+    url(r'^posts/', include('posts.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 ]

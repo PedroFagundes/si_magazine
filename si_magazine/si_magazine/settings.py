@@ -15,6 +15,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'posts',
     'homesite',
 )
@@ -68,3 +69,5 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

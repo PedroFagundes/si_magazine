@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 	{% block posts_should_know %}
-		{% for post in posts %}
+		{% for post in shouldknow_posts %}
 			<article class="entry type-post style-thumbnail-text col-sm-6 col-md-2 colheight-sm-1">
 				<div class="entry-meta">
 					<span class="category"><a href="blog.html">{{ post.category }}</a></span>
@@ -37,6 +37,34 @@
 			</article>
 		{% endfor %}
 	{% endblock posts_whats_new %}
+
+	{% block posts_whats_hot %}
+		{% for post in whatshot_posts %}
+			<article class="entry style-large type-post">
+				<figure class="entry-thumbnail hidden-xs">
+					<a href="single.html">
+					<!-- to disable lazy loading, remove data-src and data-src-retina -->
+						<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post.image_link }}" data-src-retina="{{ post.image_link }}" width="680" height="452" alt="">
+						<!--fallback for no javascript browsers-->
+						<noscript>
+							<img src="{{ post.image_link }}" alt="">
+						</noscript>
+					</a>
+				</figure>
+				<header class="entry-header">
+					<h3 class="entry-title">
+						<a href="single.html" rel="bookmark">{{ post.title }}</a>
+					</h3>
+					<div class="entry-meta">
+						<span class="author">por <a href="blog.html">{{ post.author }}</a></span>
+						<span class="entry-date"><a href="blog.html">em <time datetime="2013-07-04T23:26:34+00:00">{{ post.pubdate }}</time></a></span>
+						<span class="category">em <a href="blog.html">{{ post.category }}</a></span>
+					</div>
+				</header>
+				<p>{{ post.short_description }}</p>
+			</article>
+		{% endfor %}
+	{% endblock posts_whats_hot %}
 
 	{% block 1st_post %}
 		<article class="entry style-grid style-hero hero-md-largest type-post col-md-8 col-lg-12 colheight-sm-1 colheight-md-2 colheight-lg-2 colheight-xl-2">
