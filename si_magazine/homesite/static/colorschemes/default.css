@@ -103,7 +103,7 @@ a:hover {
 }
 .header-navbar .header-navbar-inner .btn-icon {
   color: #161f29;
-  background-color: #f1c40f;
+  background-color: #0099FF;
 }
 .header-navbar .header-navbar-inner .btn-icon:hover,
 .header-navbar .header-navbar-inner .btn-icon:focus,
@@ -150,12 +150,12 @@ a:hover {
 .header-navbar a:hover,
 .header-navbar li.active > a,
 .header-navbar li.active > a:hover {
-  color: #f1c40f;
+  color: #0099FF;
 }
 .header-navbar li a:hover,
 .header-navbar li li.active > a,
 .header-navbar li li.active > a:hover {
-  color: #f1c40f;
+  color: #0099FF;
   background-color: #0d1318;
 }
 .header-navbar .nav-pages a {
@@ -166,7 +166,7 @@ a:hover {
   background-color: transparent;
 }
 .nav.navbar-nav li .subnav-wrapper {
-  border-top-color: #f1c40f;
+  border-top-color: #0099FF;
   background-color: #161f29;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -176,7 +176,7 @@ a:hover {
   border-left-color: #161f29;
 }
 .nav.navbar-nav  > li.nav-all  > a {
-  color: #f1c40f;
+  color: #0099FF;
 }
 .navbar-nav li .subnav-wrapper.subnav-tabbed {
   background-color: #0d1318;
@@ -253,19 +253,19 @@ a:hover {
 .ribbon.ribbon-highlight  > a,
 .ribbon.ribbon-highlight  > span,
 .ribbon.ribbon-highlight  > .ribbon-inner {
-  background-color: #f1c40f;
-  color: #161f29;
+  background-color: #0099FF;
+  color: #FFFFFF;
 }
 .ribbon.ribbon-highlight  > a:hover {
-  background-color: #dab10d;
+  background-color: #0066CC;
 }
 .ribbon.ribbon-highlight  > span,
 .ribbon.ribbon-highlight  > .ribbon-inner {
-  color: #161f29;
+  color: #FFFFFF;
 }
 .ribbon.ribbon-highlight  > span a,
 .ribbon.ribbon-highlight  > .ribbon-inner a {
-  color: #161f29;
+  color: #FFFFFF;
 }
 .ribbon.ribbon-focus  > a,
 .ribbon.ribbon-focus  > span,
@@ -302,12 +302,12 @@ a:hover {
   border-bottom-color: #927608;
 }
 .style-review-score {
-  background-color: #f1c40f;
-  color: #161f29;
+  background-color: #0099FF;
+  color: #FFFFFF;
 }
 .style-review-list .style-review-score {
-  background-color: #f1c40f;
-  color: #161f29;
+  background-color: #0099FF;
+  color: #FFFFFF;
 }
 .style-single h1,
 .style-single h2,
@@ -331,7 +331,7 @@ a:hover {
   color: #2c3e50;
 }
 .style-hero.hero-nav .small {
-  color: #f1c40f;
+  color: #0099FF;
 }
 .style-recent-list {
   border-top-color: #aabdd1;
@@ -362,10 +362,10 @@ a:hover {
   color: #ffffff;
 }
 .style-grid .entry-header p.small:first-child {
-  color: #f1c40f;
+  color: #0099FF;
 }
 .style-grid .entry-header p.small:first-child a {
-  color: #f1c40f;
+  color: #0099FF;
 }
 /**************************************************************************
  * 		4.3. Comments Area
@@ -454,7 +454,7 @@ a:hover {
 .pagination  > li.active > span:hover,
 .pagination  > li a:hover {
   background-color: transparent;
-  color: #f1c40f;
+  color: #0099FF;
 }
 /**************************************************************************
  * 		4.7. Sidenav
@@ -577,16 +577,16 @@ a:hover {
   border-color: #444444;
 }
 .btn-warning {
-  color: #161f29;
-  border-color: #e3b90d;
-  background-color: #f1c40f;
+  color: #FFFFFF;
+  border-color: #33CCFF;
+  background-color: #0099FF;
 }
 .btn-warning:hover,
 .btn-warning:active,
 .btn-warning.active {
-  color: #161f29;
-  background-color: #dab10d;
-  border-color: #e3b90d;
+  color: #FFFFFF;
+  background-color: #0066CC;
+  border-color: #33CCFF;
 }
 .btn-primary {
   border-color: #233140;
@@ -604,7 +604,7 @@ a:hover {
  * 		4.12.  Progress Bar
  */
 .progress-bar {
-  background-color: #f1c40f;
+  background-color: #0099FF;
   color: #161f29;
 }
 /**************************************************************************
@@ -682,7 +682,7 @@ a:hover {
   border-top: 1px solid #d0d0d0;
 }
 .widget_calendar table #today {
-  background-color: #f1c40f;
+  background-color: #0099FF;
   color: #161f29;
 }
 /**************************************************************************
