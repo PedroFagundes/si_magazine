@@ -253,6 +253,7 @@ a:hover {
 .ribbon.ribbon-highlight  > a,
 .ribbon.ribbon-highlight  > span,
 .ribbon.ribbon-highlight  > .ribbon-inner {
+  transition: background-color 0.5s ease;
   background-color: #00CCFF;
   color: #FFFFFF;
 }
@@ -563,6 +564,7 @@ a:hover {
   -webkit-background-clip: padding-box;
   -o-background-clip: padding-box;
   background-clip: padding-box;
+  transition: background-color 0.5s ease;
 }
 .btn-default {
   color: #444444;

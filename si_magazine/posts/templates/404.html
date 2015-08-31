@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<title>404 - Página não encontrada</title>
+
+	<!-- CSS IMPORTS -->
+	<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/404.css' %}">
+
+</head>
+<body>
+	<section class="main-container jumbotron text-center margin-clear">
+		<div class="container">
+			<div class="row">
+				<!-- main start -->
+				<!-- ================ -->
+				<div class="main col-md-6 col-md-offset-3 pv-40">
+					<h1 class="page-title"><span class="text-default">404</span></h1>
+					<h2>Ooops! Página não encontrada</h2>
+					<p>A página que você tentou acessar não existe. Certifique-se de que clicou no link certo ;D</p>
+					<a href="{% url 'home' %}" class="btn btn-default btn-animated btn-lg btn-404">Voltar para home <i class="fa fa-home"></i></a>
+				</div>
+				<!-- main end -->
+			</div>
+		</div>
+	</section>
+
+
+	<audio id="Player" autoplay>
+	     <source src="{% static 'media/cat.ogg' %} "/>
+	</audio>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+	background: url('../img/404.jpg');
+
+	/* Background image is centered vertically and horizontally at all times */
+	background-position: center center;
+
+	/* Background image doesn't tile */
+	background-repeat: no-repeat;
+
+	/* Background image is fixed in the viewport so that it doesn't move when
+	the content's height is greater than the image's height */
+	background-attachment: fixed;
+
+	/* This is what makes the background image rescale based
+	on the container's size */
+	background-size: cover;
+
+	/* Set a background color that will be displayed
+	while the background image is loading */
+	background-color: #00CCFF;
+
+    -webkit-animation:spin 0.3s linear;
+    -moz-animation:spin 0.3s linear;
+    animation:spin 0.3s linear;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.main {
+	padding: 30px;
+	background-color: #ccc;
+	border-radius: 5px;
+
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.3);
+}
+.main h1 {
+	font-size: 130px;
+}
+.main h2, p {
+	color: white;
+}
+.main-container {
+	background-color: transparent;
+}
+.text-default {
+    color: #00CCFF;
+}
+.btn-404 {
+	transition: background-color 0.5s ease;
+	color: white;
+	background-color: #00CCFF;
+	border-radius: 0;
+	border-color: #00CCFF;
+}
+.btn-404:hover {
+	transition: background-color 0.5s ease;
+	color: white;
+	background-color: #0066CC;
+	border-color: #00CCFF;
+}
+
+/*MORPH*/
+.morph {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.morph:hover {
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
