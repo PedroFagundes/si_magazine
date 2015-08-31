@@ -1,6 +1,40 @@
 {% extends "homesite/base.html" %}
 {% load staticfiles %}
 	{% block content %}
+
+	<div id="fb-root"></div>
+		<script>
+			  window.fbAsyncInit = function() {
+			  FB.init({
+			    appId      : '815093458588258', // App ID
+			    channelUrl : 'http://localhost', // Channel File
+			    status     : true, // check login status
+			    cookie     : true, // enable cookies to allow the server to access the session
+			    xfbml      : true  // parse XFBML
+			  });
+			};
+
+			(function(d){
+			  var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+			  if (d.getElementById(id)) {return;}
+			  js = d.createElement('script'); js.id = id; js.async = true;
+			  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=815093458588258";
+			  ref.parentNode.insertBefore(js, ref);
+			}(document));
+		</script>
+
+	<!-- FACEBOOK COMMENTS PLUGIN -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- END FACEBOOK COMMENTS PLUGIN -->
+
 		<div id="main" class="container">
 
 			<div class="section section-no-margin-bottom row entries bg-primary">
@@ -128,11 +162,23 @@
 
 						<hr>
 
-						<aside class="widget post-tags">
-							<i class="icon-tags"></i> Tags:
-							{% for tag in post.tags.all %}
-								<a href="{% url 'posts_tag_list' tag %}"> {{ tag }}</a>
-							{% endfor %}
+						<aside class="widget teste">
+							<aside class="post-tags">
+								<i class="icon-tags"></i> Tags:
+								{% for tag in post.tags.all %}
+									<a href="{% url 'posts_tag_list' tag.name %}"> {{ tag }}</a>
+								{% endfor %}
+							</aside>
+							<aside class="post-rate">
+								<i class="icon-star"></i> Gostou?
+									{% if user and not user.is_anonymous %}
+										<a>Hello, {{ user.get_full_name }}!</a>
+										<br>
+										<a href="/logout">Logout</a>
+									{% else %}
+										Entre com <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Twitter</a> ou <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Google</a> para votar
+									{% endif %}
+							</aside>
 						</aside>
 
 						<hr>
@@ -244,11 +290,12 @@
 
 						<aside class="widget">
 							Compartilhar:
-							<a href="#" class="" onclick="window.open(
+							<!--<a href="#" class="" onclick="window.open(
 								'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
 								'facebook-share-dialog', 
 								'width=626,height=436'); 
-								return false;"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-facebook icon-light"></i></span></a>
+								return false;"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-facebook icon-light"></i></span></a>-->
+							<div class="fb-share-button" data-href="http://http://localhost/posts/janot-denuncia-eduardo-cunha-ao-stf-por-corrupcao-e-lavagem-de-dinheiro/" data-layout="button_count"></div>
 							<a href="#" class="" onclick="window.open(
 								'http://twitter.com/home?status='+encodeURIComponent(location.href), 
 								'facebook-share-dialog', 
@@ -267,8 +314,15 @@
 					<div id="comments" class="comments-area indented">
 
 						<h4 class="comments-title">Comentários</h4>
+						<hr>
 
-						<ol class="media-list comment-list">
+						<div class="fb-comments"
+						data-href="{{ my_object.slug }}"
+						data-num-posts="5"
+						data-width="589">
+						</div>
+
+						<!--<ol class="media-list comment-list">
 							<li class="media comment">
 
 								<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
@@ -421,7 +475,7 @@
 
 							</form>
 
-						</div><!-- #respond -->
+						</div>--><!-- #respond -->
 
 					</div><!--/#comments-->
 
@@ -826,7 +880,7 @@
 							<a href="#">Dolore</a>
 							<a href="#">Magna</a>
 							<a href="#">Aliqua</a>
-							<a href="#">Seddo</a> 
+							<a href="#">Seddo</a>
 							<a href="#">Siusmod</a>
 							<a href="#">Tempor</a>
 							<a href="#">Incididunt</a>

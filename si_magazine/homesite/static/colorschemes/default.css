@@ -722,3 +722,11 @@ a:hover {
     background-color: #0d1318;
   }
 }
+
+/* si_magazine changes */
+aside.teste > aside {
+  display: inline;
+}
+aside.post-rate {
+    float: right;
+}

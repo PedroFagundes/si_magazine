@@ -11,7 +11,7 @@
 
 						<article class="entry style-grid style-hero hero-md-largest type-post col-md-8 col-lg-12 colheight-sm-1 colheight-md-2 colheight-lg-2 colheight-xl-2">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 1st_post.category %}">{{ 1st_post.category }}</a>
+								<a href="{% url 'posts_category_list' 1st_post.category.name %}">{{ 1st_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 1st_post.slug %}">{{ 1st_post.title }}</a> </h3>
@@ -250,7 +250,7 @@
 								<div class="tagcloud">
 									
 									{% for tag in tags %}
-										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.name }}</a>
+										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.label }}</a>
 									{% endfor %}
 								
 								</div>

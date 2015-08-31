@@ -7,9 +7,9 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 class Posts(models.Model):
-	title 	           = models.CharField('Título', max_length=100, null=False, blank=False)
-	image_link         = models.CharField('Imagem', max_length=200)
-	short_description  = models.TextField('Corpo da Postagem', max_length=10000)
+	title 	           = models.CharField(max_length=100, null=False, blank=False)
+	image_link         = models.CharField(max_length=200)
+	short_description  = models.TextField(max_length=10000)
 	content            = RichTextField()
 	author             = models.ForeignKey(User)
 	tags               = models.ManyToManyField('Tags')
@@ -29,13 +29,20 @@ class Posts(models.Model):
 		super(Posts, self).save()
 
 class Tags(models.Model):
-	name = models.CharField('Tag', max_length=50)
+	name  = models.SlugField(blank=True)
+	label = models.CharField(max_length=50)
 
 	def __str__(self):
-		return self.name
+		return self.label
+
+	def save(self):
+		super(Tags, self).save()
+		self.name = '%s' % (slugify(self.label))
+		super(Tags, self).save()
 
 class Categories(models.Model):
-	name = models.CharField('Category', max_length=50)
+	name  = models.SlugField(blank=True)
+	label = models.CharField(max_length=50)
 
 	def __str__(self):
-		return self.name
+		return self.label

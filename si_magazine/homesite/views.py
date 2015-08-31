@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
+from django.contrib.auth import logout as auth_logout
 
 from posts.models import Posts, Tags, Categories
 
@@ -25,3 +26,7 @@ class Home(ListView):
 	    context['tags']             = Tags.objects.all()
 	    context['categories']       = Categories.objects.all()
 	    return context
+
+def Logout(request):
+	auth_logout(request)
+	return redirect('/')
