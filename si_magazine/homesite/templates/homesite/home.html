@@ -202,7 +202,7 @@
 
 			<div id="content" class="content section row">
 
-				<div class="col-md-9 col-lg-9">
+				<div class="col-md-12 col-lg-12">
 
 					<div class="row">
 
@@ -245,6 +245,20 @@
 
 							<aside class="widget">
 
+								<h3 class="widget-title ribbon ribbon-focus"><span>TAGS</span></h3>
+
+								<div class="tagcloud">
+									
+									{% for tag in tags %}
+										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.name }}</a>
+									{% endfor %}
+								
+								</div>
+
+							</aside><!--/.widget-->
+
+							<aside class="widget">
+
 								<h3 class="widget-title ribbon ribbon-focus"><span>Latest Discussion</span></h3>
 
 								<ul class="entries">
@@ -260,57 +274,43 @@
 
 										<span class="comments-count-balloon">860</span>
 										<a href="single.html" rel="bookmark" class="entry-title">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
-										
+
 									</li>
 
 									<li class="entry style-recent-list type-post">
 
 										<span class="comments-count-balloon">1234</span>
 										<a href="single.html" rel="bookmark" class="entry-title">In voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a>
-										
+
 									</li>
 
 									<li class="entry style-recent-list type-post">
 
 										<span class="comments-count-balloon">90</span>
 										<a href="single.html" rel="bookmark" class="entry-title">Duis aute irure dolor in reprehenderit.</a>
-										
+
 									</li>
 
 									<li class="entry style-recent-list type-post">
 
 										<span class="comments-count-balloon">8</span>
 										<a href="single.html" rel="bookmark" class="entry-title">Utempor incididunt ut labore et dolore magna aliqua.</a>
-										
+
 									</li>
 
 								</ul>
 
 							</aside><!--/.widget-->
 
-							<aside class="widget">
-
-								<h3 class="widget-title ribbon ribbon-focus"><span>TAGS</span></h3>
-
-								<div class="tagcloud">
-									
-									{% for tag in tags %}
-										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.name }}</a>
-									{% endfor %}
-								
-								</div>
-
-							</aside><!--/.widget-->
-
 						</div><!--/.col-md-4.col-lg-4.md-pull-right-->
 
 						<div class="bg-base col-md-8 col-lg-8">
-							
-							<h2 class="section-title ribbon ribbon-highlight"><span>What's Hot</span></h2>
+
+							<h2 class="section-title ribbon ribbon-highlight"><span>Mais Curtidas</span></h2>
 
 							<div class="entries">
 
-								
+
 								{% for post in whatshot_posts %}
 									<article class="entry style-large type-post">
 										<figure class="entry-thumbnail hidden-xs">
@@ -336,7 +336,7 @@
 										<p>{{ post.short_description }}</p>
 									</article>
 								{% endfor %}
-								
+
 							</div>
 
 						</div><!--/.bg-base.col-md-8.col-lg-8-->
@@ -345,8 +345,8 @@
 
 				</div><!--/.col-md-8.col-lg-4-->
 
-				<div class="sidebar col-md-3 col-lg-3">
-						
+				<!--<div class="sidebar col-md-3 col-lg-3">
+
 					<aside class="widget">
 
 						<h2 class="widget-title ribbon"><span>Latest Review</span></h2>
@@ -359,10 +359,10 @@
 									80
 								</div>
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/80x80_6.jpg' %}" data-src-retina="{% static 'uploads/160x160_2.jpg' %}" width="80" height="80" class="media-object pull-left" alt="">
 
-								<!--fallback for no javascript browsers-->
+
 								<noscript>
 									<img src="{% static 'uploads/80x80_6.jpg' %}" alt="">
 								</noscript>
@@ -382,10 +382,10 @@
 									79
 								</div>
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/80x80_7.jpg' %}" data-src-retina="{% static 'uploads/160x160_2.jpg' %}" width="80" height="80" class="media-object pull-left" alt="">
 
-								<!--fallback for no javascript browsers-->
+
 								<noscript>
 									<img src="{% static 'uploads/80x80_7.jpg' %}" alt="">
 								</noscript>
@@ -405,10 +405,10 @@
 									76
 								</div>
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/80x80_8.jpg' %}" data-src-retina="{% static 'uploads/160x160_2.jpg' %}" width="80" height="80" class="media-object pull-left" alt="">
 
-								<!--fallback for no javascript browsers-->
+
 								<noscript>
 									<img src="{% static 'uploads/80x80_8.jpg' %}" alt="">
 								</noscript>
@@ -428,10 +428,10 @@
 									79
 								</div>
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/80x80_9.jpg' %}" data-src-retina="{% static 'uploads/160x160_2.jpg' %}" width="80" height="80" class="media-object pull-left" alt="">
 
-								<!--fallback for no javascript browsers-->
+
 								<noscript>
 									<img src="{% static 'uploads/80x80_9.jpg' %}" alt="">
 								</noscript>
@@ -451,10 +451,10 @@
 									74
 								</div>
 
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/80x80_10.jpg' %}" data-src-retina="{% static 'uploads/160x160_2.jpg' %}" width="80" height="80" class="media-object pull-left" alt="">
 
-								<!--fallback for no javascript browsers-->
+
 								<noscript>
 									<img src="{% static 'uploads/80x80_10.jpg' %}" alt="">
 								</noscript>
@@ -467,7 +467,7 @@
 
 							</article>
 
-						</div><!--/.entries.colheight-->
+						</div>
 
 						<div class="more-wrapper">
 							<a href="review.html" class="btn btn-warning btn-sm">Review Archive</a>
@@ -641,11 +641,11 @@
 							<li><a href="blog.html">#Velit esse Ullamco laboris.</a></li>
 						</ul>
 
-					</aside><!--/.widget-->
+					</aside>
 
-				</div><!--/.sidebar.col-md-3.col-lg-3-->
+				</div>-->
 
-			</div><!--/.row.content-->
+			</div>
 
 			<div id="coverageCarousel" class="section bg-primary carousel carousel slide">
 
@@ -693,7 +693,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -719,7 +719,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -745,7 +745,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -767,7 +767,7 @@
 					</div><!--/.item-->
 					<div class="item">
 						<h2 class="section-title ribbon ribbon-highlight"><a href="blog.html"> #WCDC 2013</a></h2>
-						
+
 						<div class="row entries">
 
 							<article class="entry style-grid type-post col-md-6 col-lg-3 colheight-sm-1">
@@ -779,7 +779,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -805,7 +805,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -823,7 +823,7 @@
 							</article>
 
 							<article class="entry style-grid type-post col-md-6 col-lg-3 colheight-sm-1">
-								
+
 								<header class="entry-header">
 									<p class="small"><a href="blog.html">Review</a></p>
 									<h3 class="entry-title"><a href="single.html">xPhone first hand: Check out, this might be the right phone for you</a> </h3>
@@ -832,7 +832,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -859,7 +859,7 @@
 										<span class="entry-author"> by <a href="blog.html">John Doe</a></span>
 									</div>
 								</header>
-								
+
 								<figure class="entry-thumbnail">
 
 									<a href="single.html" class="overlay overlay-primary"></a>
@@ -891,9 +891,9 @@
 			</div>
 
 			<div class="section content bg-base">
-				
+
 				<h2 class="section-title ribbon"><span>What's you should know</span></h2>
-				
+
 				<div class="entries">
 
 					<div class="row">
