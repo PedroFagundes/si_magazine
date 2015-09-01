@@ -295,7 +295,7 @@
 								<div class="tagcloud">
 									
 									{% for tag in tags %}
-										<a href="">{{ tag.name }}</a>
+										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.name }}</a>
 									{% endfor %}
 								
 								</div>
