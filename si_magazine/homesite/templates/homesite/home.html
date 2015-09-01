@@ -33,7 +33,7 @@
 
 						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 2nd_post.category %}">{{ 2nd_post.category }}</a>
+								<a href="{% url 'posts_category_list' 2nd_post.category.name %}">{{ 2nd_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 2nd_post.slug %}">{{ 2nd_post.title }}</a> </h3>
@@ -55,7 +55,7 @@
 
 						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 3rd_post.category %}">{{ 3rd_post.category }}</a>
+								<a href="{% url 'posts_category_list' 3rd_post.category.name %}">{{ 3rd_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 3rd_post.slug %}">{{ 3rd_post.title }}</a> </h3>
@@ -85,7 +85,7 @@
 
 						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 4th_post.category %}">{{ 4th_post.category }}</a>
+								<a href="{% url 'posts_category_list' 4th_post.category.name %}">{{ 4th_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 4th_post.slug %}">{{ 4th_post.title }}</a> </h3>
@@ -107,7 +107,7 @@
 
 						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 5th_post.category %}">{{ 5th_post.category }}</a>
+								<a href="{% url 'posts_category_list' 5th_post.category.name %}">{{ 5th_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 5th_post.slug %}">{{ 5th_post.title }}</a> </h3>
@@ -129,7 +129,7 @@
 
 						<article class="entry style-grid style-hero hero-lg-larger type-post col-md-4 col-lg-6 colheight-sm-1 colheight-lg-2">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 6th_post.category %}">{{ 6th_post.category }}</a>
+								<a href="{% url 'posts_category_list' 6th_post.category.name %}">{{ 6th_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 6th_post.slug %}">{{ 6th_post.title }}</a> </h3>
@@ -151,7 +151,7 @@
 
 						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 7th_post.category %}">{{ 7th_post.category }}</a>
+								<a href="{% url 'posts_category_list' 7th_post.category.name %}">{{ 7th_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 7th_post.slug %}">{{ 7th_post.title }}</a> </h3>
@@ -173,7 +173,7 @@
 
 						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
 							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 8th_post.category %}">{{ 8th_post.category }}</a>
+								<a href="{% url 'posts_category_list' 8th_post.category.name %}">{{ 8th_post.category }}</a>
 							</div>
 							<header class="entry-header">
 								<h3 class="entry-title"><a href="{% url 'post_detail' 8th_post.slug %}">{{ 8th_post.title }}</a> </h3>
@@ -210,7 +210,7 @@
 
 							<aside class="widget">
 
-								<h2 class="widget-title ribbon ribbon-focus"><span>What's New</span></h2>
+								<h2 class="widget-title ribbon ribbon-focus"><span>Últimas notícias</span></h2>
 
 								<div class="entries row">
 
@@ -330,7 +330,7 @@
 											<div class="entry-meta">
 												<span class="author">por <a href="blog.html">{{ post.author }}</a></span>
 												<span class="entry-date"><a href="blog.html">em <time datetime="2013-07-04T23:26:34+00:00">{{ post.pubdate }}</time></a></span>
-												<span class="category">em <a href="{% url 'posts_category_list' post.category %}">{{ post.category }}</a></span>
+												<span class="category">em <a href="{% url 'posts_category_list' post.category.name %}">{{ post.category }}</a></span>
 											</div>
 										</header>
 										<p>{{ post.short_description }}</p>
@@ -900,7 +900,7 @@
 						{% for post in shouldknow_posts %}
 							<article class="entry type-post style-thumbnail-text col-sm-6 col-md-2 colheight-sm-1">
 								<div class="entry-meta">
-									<span class="category"><a href="{% url 'posts_category_list' post.category %}">{{ post.category }}</a></span>
+									<span class="category"><a href="{% url 'posts_category_list' post.category.name %}">{{ post.category }}</a></span>
 								</div>
 
 								<h3 class="entry-title">

@@ -96,15 +96,11 @@
 						<div class="row subnav-wrapper">
 
 							<div class="col-md-2 col-sm-2 bg-bar">
-								<strong class="subnav-header">Pages</strong>
+								<strong class="subnav-header">Categorias</strong>
 								<ul class="subnav-full">
-									<li><a href="{% url 'home' %}">Blog 3 Columns</a></li>
-									<li><a href="blog.html">Blog 2 Columns</a></li>
-									<li><a href="blog-grids.html">Blog Grids</a></li>
-									<li><a href="reviews.html">Reviews Archive</a></li>
-									<li><a href="single.html">Single Blog</a></li>
-									<li><a href="single-full.html">Single Blog (Full)</a></li>
-									<li><a href="components.html">Components</a></li>
+									{% for category in categories %}
+										<li><a href="{% url 'posts_category_list' category.name %}">{{ category }}</a></li>
+									{% endfor %}
 								</ul>
 							</div>
 
@@ -462,13 +458,13 @@
 						</div>
 
 					</li>
-					<li><a href="#">Category 1</a></li>
+					<!--<li><a href="#">Category 1</a></li>
 					<li><a href="#">Category 2</a></li>
 					<li><a href="#">Category 3</a></li>
 					<li><a href="#">Category 4</a></li>
 					<li><a href="#">Category 5</a></li>
 					<li><a href="#">Category 6</a></li>
-					<li><a href="#">Category 7</a></li>
+					<li><a href="#">Category 7</a></li>-->
 				</ul>
 
 			</div>
