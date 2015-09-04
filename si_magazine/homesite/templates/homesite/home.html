@@ -17,14 +17,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 1st_post.slug %}">{{ 1st_post.title }}</a> </h3>
 								<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 1st_post.author }}</a></span>
+									<span class="entry-author"> por <a href="blog.html">{{ 1st_post.author.get_full_name.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 1st_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 1st_post.image_link }}" data-src-retina="{{ 1st_post.image_link }}" width="680" height="452" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 									<img src="{% static 'uploads/680x452_2.jpg' %}" alt="">
 								</noscript>
@@ -39,14 +37,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 2nd_post.slug %}">{{ 2nd_post.title }}</a> </h3>
 								<div class="entry-meta">
 								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 2nd_post.author }}</a></span>
+								<span class="entry-author"> por <a href="blog.html">{{ 2nd_post.author.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 2nd_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 2nd_post.image_link }}" data-src-retina="{{ 2nd_post.image_link }}" width="480" height="280" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 								<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
 								</noscript>
@@ -61,14 +57,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 3rd_post.slug %}">{{ 3rd_post.title }}</a> </h3>
 								<div class="entry-meta">
 								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 3rd_post.author }}</a></span>
+								<span class="entry-author"> por <a href="blog.html">{{ 3rd_post.author.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 3rd_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 3rd_post.image_link }}" data-src-retina="{{ 3rd_post.image_link }}" width="480" height="280" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 								<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
 								</noscript>
@@ -91,14 +85,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 4th_post.slug %}">{{ 4th_post.title }}</a> </h3>
 								<div class="entry-meta">
 								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 4th_post.author}}</a></span>
+								<span class="entry-author"> por <a href="blog.html">{{ 4th_post.author.get_full_name}}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 4th_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_2.jpg' %}" data-src-retina="{% static 'uploads/720x420_2.jpg' %}" width="480" height="280" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 								<img src="{% static 'uploads/480x280_2.jpg' %}" alt="">
 								</noscript>
@@ -113,14 +105,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 5th_post.slug %}">{{ 5th_post.title }}</a> </h3>
 								<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 5th_post.author }}</a></span>
+									<span class="entry-author"> por <a href="blog.html">{{ 5th_post.author.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 5th_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 5th_post.image_link }}" data-src-retina="{{ 5th_post.image_link }}" width="680" height="452" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
 								</noscript>
@@ -135,14 +125,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 6th_post.slug %}">{{ 6th_post.title }}</a> </h3>
 								<div class="entry-meta">
 								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 6th_post.author }}</a></span>
+								<span class="entry-author"> por <a href="blog.html">{{ 6th_post.author.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 6th_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 6th_post.image_link }}" data-src-retina="{{ 6th_post.image_link }}" width="380" height="435" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 									<img src="{% static 'uploads/380x435_1.jpg' %}" alt="">
 								</noscript>
@@ -157,14 +145,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 7th_post.slug %}">{{ 7th_post.title }}</a> </h3>
 								<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 7th_post.author }}</a></span>
+									<span class="entry-author"> por <a href="blog.html">{{ 7th_post.author.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 7th_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 7th_post.image_link }}" data-src-retina="{{ 7th_post.image_link }}" width="680" height="452" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
 								</noscript>
@@ -179,14 +165,12 @@
 								<h3 class="entry-title"><a href="{% url 'post_detail' 8th_post.slug %}">{{ 8th_post.title }}</a> </h3>
 								<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 8th_post.author }}</a></span>
+									<span class="entry-author"> por <a href="blog.html">{{ 8th_post.author.get_full_name }}</a></span>
 								</div>
 							</header>
 							<figure class="entry-thumbnail">
 								<a href="{% url 'post_detail' 8th_post.slug %}" class="overlay overlay-primary"></a>
-								<!-- to disable lazy loading, remove data-src and data-src-retina -->
 								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 8th_post.image_link }}" data-src-retina="{{ 8th_post.image_link }}" width="680" height="452" alt="">
-								<!--fallback for no javascript browsers-->
 								<noscript>
 									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
 								</noscript>
@@ -214,12 +198,10 @@
 
 								<div class="entries row">
 
-									{% for post in whatsnew_posts %}
+									{% for post in last_news_posts %}
 										<article class="type-post style-media-list media col-sm-6 col-md-12">
-											<!-- to disable lazy loading, remove data-src and data-src-retina -->
 											<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post.image_link }}" data-src-retina="{{ post.image_link }}" width="80" height="80" class="media-object pull-left" alt="">
 
-											<!--fallback for no javascript browsers-->
 											<noscript>
 												<img src="{{ post.image_link }}" alt="">
 											</noscript>
@@ -238,7 +220,7 @@
 								</div>
 
 								<div class="more-wrapper">
-									<a href="blog.html" class="btn btn-warning btn-sm">Mais</a>
+									<a href="{% url 'all_posts' %}" class="btn btn-warning btn-sm">Mais</a>
 								</div>
 
 							</aside>
@@ -248,16 +230,30 @@
 								<h3 class="widget-title ribbon ribbon-focus"><span>TAGS</span></h3>
 
 								<div class="tagcloud">
-									
+
 									{% for tag in tags %}
 										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.label }}</a>
 									{% endfor %}
-								
+
 								</div>
 
 							</aside><!--/.widget-->
 
 							<aside class="widget">
+
+								<h3 class="widget-title ribbon ribbon-focus"><span>CATEGORIAS</span></h3>
+
+								<div class="tagcloud">
+
+									{% for category in categories %}
+										<a href="{% url 'posts_category_list' category.name %}">{{ category.label }}</a>
+									{% endfor %}
+
+								</div>
+
+							</aside><!--/.widget-->
+
+							<!--<aside class="widget">
 
 								<h3 class="widget-title ribbon ribbon-focus"><span>Latest Discussion</span></h3>
 
@@ -300,7 +296,7 @@
 
 								</ul>
 
-							</aside><!--/.widget-->
+							</aside>--><!--/.widget-->
 
 						</div><!--/.col-md-4.col-lg-4.md-pull-right-->
 
@@ -311,13 +307,11 @@
 							<div class="entries">
 
 
-								{% for post in whatshot_posts %}
+								{% for post in most_liked_posts %}
 									<article class="entry style-large type-post">
 										<figure class="entry-thumbnail hidden-xs">
 											<a href="{% url 'post_detail' post.slug %}">
-											<!-- to disable lazy loading, remove data-src and data-src-retina -->
 												<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post.image_link }}" data-src-retina="{{ post.image_link }}" width="680" height="452" alt="">
-												<!--fallback for no javascript browsers-->
 												<noscript>
 													<img src="{{ post.image_link }}" alt="">
 												</noscript>
@@ -328,7 +322,7 @@
 												<a href="{% url 'post_detail' post.slug %}" rel="bookmark">{{ post.title }}</a>
 											</h3>
 											<div class="entry-meta">
-												<span class="author">por <a href="blog.html">{{ post.author }}</a></span>
+												<span class="author">por <a href="blog.html">{{ post.author.get_full_name }}</a></span>
 												<span class="entry-date"><a href="blog.html">em <time datetime="2013-07-04T23:26:34+00:00">{{ post.pubdate }}</time></a></span>
 												<span class="category">em <a href="{% url 'posts_category_list' post.category.name %}">{{ post.category }}</a></span>
 											</div>
@@ -647,6 +641,7 @@
 
 			</div>
 
+			<!-- CARROUSEL
 			<div id="coverageCarousel" class="section bg-primary carousel carousel slide">
 
 				<h2 class="section-title ribbon ribbon-highlight"><span>&nbsp;</span></h2>
@@ -671,10 +666,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_1.jpg' %}" data-src-retina="{% static 'uploads/720x420_1.jpg' %}" width="480" height="280" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
 									</noscript>
@@ -698,10 +691,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/680x452_1.jpg' %}" data-src-retina="{% static 'uploads/1024x680_1.jpg' %}" width="680" height="452" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/680x452_1.jpg' %}" alt="">
 									</noscript>
@@ -724,10 +715,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_3.jpg' %}" data-src-retina="{% static 'uploads/720x420_3.jpg' %}" width="480" height="280" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/480x280_3.jpg' %}" alt="">
 									</noscript>
@@ -750,10 +739,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_4.jpg' %}" data-src-retina="{% static 'uploads/720x420_4.jpg' %}" width="480" height="280" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/480x280_4.jpg' %}" alt="">
 									</noscript>
@@ -762,9 +749,9 @@
 
 							</article>
 
-						</div><!--/.row.entries-->
+						</div>
 
-					</div><!--/.item-->
+					</div>
 					<div class="item">
 						<h2 class="section-title ribbon ribbon-highlight"><a href="blog.html"> #WCDC 2013</a></h2>
 
@@ -784,10 +771,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_3.jpg' %}" data-src-retina="{% static 'uploads/720x420_3.jpg' %}" width="480" height="280" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/480x280_3.jpg' %}" alt="">
 									</noscript>
@@ -810,10 +795,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_4.jpg' %}" data-src-retina="{% static 'uploads/720x420_4.jpg' %}" width="480" height="280" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/480x280_4.jpg' %}" alt="">
 									</noscript>
@@ -837,10 +820,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_1.jpg' %}" data-src-retina="{% static 'uploads/720x420_1.jpg' %}" width="480" height="280" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
 									</noscript>
@@ -864,10 +845,8 @@
 
 									<a href="single.html" class="overlay overlay-primary"></a>
 
-									<!-- to disable lazy loading, remove data-src and data-src-retina -->
 									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/680x452_1.jpg' %}" data-src-retina="{% static 'uploads/1024x680_1.jpg' %}" width="680" height="452" alt="">
 
-									<!--fallback for no javascript browsers-->
 									<noscript>
 										<img src="{% static 'uploads/680x452_1.jpg' %}" alt="">
 									</noscript>
@@ -876,10 +855,10 @@
 
 							</article>
 
-						</div><!--/.row.entries-->
+						</div>
 
-					</div><!--/.item-->
-				</div><!--/.carousel-inner-->
+					</div>
+				</div>
 
 				<a class="left carousel-control" href="#coverageCarousel" data-slide="prev">
 					<span class="icon icon-angle-left"></span>
@@ -889,15 +868,16 @@
 				</a>
 
 			</div>
+			-->
 
 			<div class="section content bg-base">
 
-				<h2 class="section-title ribbon"><span>What's you should know</span></h2>
+				<h2 class="section-title ribbon"><span>Posts interessantes</span></h2>
 
 				<div class="entries">
 
 					<div class="row">
-						{% for post in shouldknow_posts %}
+						{% for post in interesting_posts %}
 							<article class="entry type-post style-thumbnail-text col-sm-6 col-md-2 colheight-sm-1">
 								<div class="entry-meta">
 									<span class="category"><a href="{% url 'posts_category_list' post.category.name %}">{{ post.category }}</a></span>

@@ -9,16 +9,14 @@
 					<div class="ribbon ribbon-highlight">
 						<ol class="breadcrumb ribbon-inner">
 							<li><a href="{% url 'home' %}">Home</a></li>
-							<li><a href="{% url 'all_posts' %}">Posts</a></li>
-							<li>Categorias</li>
-							<li class="active">{{ category.name }}</li>
+							<li class="active">Posts</li>
 						</ol>
 					</div>
 
 					<header class="page-header">
 
 						<h2 class="page-title">
-							{{ category.name|upper }}
+							{{ tag.label|upper }}
 						</h2>
 
 					</header>

@@ -17,15 +17,14 @@ class Posts(models.Model):
 	pub_date           = models.DateField()
 	pub_hour           = models.TimeField()
 	is_active          = models.BooleanField(default=True)
-	slug               = models.SlugField(blank=True)
+	slug               = models.SlugField(blank=True, max_length=100)
 
 	def __str__(self):
 		return self.title
 
 	# Overriding save method to set the slug field value
 	def save(self):
-		super(Posts, self).save()
-		self.slug = '%s' % (slugify(self.title))
+		self.slug = (slugify(self.title))
 		super(Posts, self).save()
 
 class Tags(models.Model):
