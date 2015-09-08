@@ -1024,3 +1024,14 @@ body.scrolled .header-navbar  .nav-pages {
     display: block;
   }
 }
+
+
+
+/* Pedro Henrique */
+.padding-top-bot {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.padding-bot {
+  padding-bottom: 50px;
+}

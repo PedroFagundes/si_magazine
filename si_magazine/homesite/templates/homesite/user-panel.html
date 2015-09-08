@@ -1,0 +1,58 @@
+{% extends "homesite/base.html" %}
+
+{% block user_greetings %}
+	{% if user.is_authenticated %}
+		<ul class="nav navbar-nav">
+			<li class="nav-all pull-right">
+				<span class="text">Olá {{ user.get_full_name }}! <a href="{% url 'logout' %}">Sair </a></span>
+				<span class="toggle glyphicon glyphicon-align-justify"></span>
+			</li>
+		</ul>
+	{% endif %}
+{% endblock user_greetings %}
+
+{% block content %}
+	<div id="main" class="container">
+		{% if user.is_authenticated %}
+			{% if my_posts %}
+				<table class="table table-hover">
+					<h1>Meus Posts</h1>
+					<a href="{% url 'new_post' %}"><i class='icon-plus'></i> Adicionar novo post</a>
+					<br><br>
+					<tr>
+						<th>Título</th>
+						<th>Data/Hora</th>
+						<th style="text-align: center">Ativo</th>
+						<th>Ação</th>
+					</tr>
+					{% for post in my_posts %}
+						<tr>
+							<td><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></td>
+							<td>{{ post.pub_date }} às {{ post.pub_hour }}</td>
+							<td style="text-align: center">
+								{% if post.is_active %}
+									<i class='icon-check'>
+								{% else %}
+								<i class='icon-unchecked'></i>
+								{% endif %}
+							</td>
+							<td><a href="{% url 'edit_post' post.slug %}">Editar</a></td>
+						</tr>
+					{% endfor %}
+				</table>
+			{% else %}
+				<h1>Meus Posts</h1>
+				Você ainda nao escreveu nenhum post.
+				<br>
+				<a href="{% url 'new_post' %}"><i class='icon-plus'></i> Adicionar novo post</a>
+			{% endif %}
+		{% else %}
+			<h1>Você precisa estar logado para acessar o painel.</h1>
+			<div class="login padding-bot">
+				Acesse com <i class='icon-google-plus'></i> <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Google</a> | <i class='icon-twitter'></i> <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Twitter</a> | <i class='icon-facebook'></i> <a href="">Facebook</a>
+				<br>
+				<span>Não tem uma conta? Crie uma agora mesmo</span>
+			</div>
+		{% endif %}
+	</div>
+{% endblock content %}

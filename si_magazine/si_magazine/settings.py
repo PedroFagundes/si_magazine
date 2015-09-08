@@ -6,7 +6,7 @@ SECRET_KEY = 'og4dtgmngi5k15ng7q@6vskqvq$=fkae_zs!d3lbf4uco3yuf='
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.2', '10.10.13.25']
+ALLOWED_HOSTS = ['localhost', '192.168.1.2', '10.10.13.25', '187.62.194.24']
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -78,11 +78,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = 'homesite/static/'
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MEDIA_URL = os.path.join(BASE_DIR, 'homesite/static/media/')
 
-#python-social-auth backends
+# django-ckeditor
+CKEDITOR_JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+# python-social-auth backends
 AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookOAuth2',
     'social.backends.google.GoogleOAuth2',

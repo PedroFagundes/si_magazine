@@ -62,7 +62,7 @@
 					<li><a href="#">Contato</a></li>
 					<li><a href="#">Anúncios </a></li>
 					<li><a href="#">Termos &amp; Condições</a></li>
-					<li><a href="#">Privacidade</a></li>
+					<li><a href="{% url 'user_panel' %}">Acessar Painel</a></li>
 				</ul>
 
 				<ul class="nav nav-icons">
@@ -82,7 +82,7 @@
 						</form>
 					</div>
 				</div>
-
+				{% block user_greetings %}{% endblock user_greetings %}
 				<!-- MENU
 				<ul class="nav navbar-nav">
 					<li class="nav-all pull-right full-subnav-wrapper">
@@ -440,8 +440,8 @@
 					<li><a href="#">Category 4</a></li>
 					<li><a href="#">Category 5</a></li>
 					<li><a href="#">Category 6</a></li>
-					<li><a href="#">Category 7</a></li>-->
-				</ul>
+					<li><a href="#">Category 7</a></li>
+				</ul>-->
 
 			</div>
 

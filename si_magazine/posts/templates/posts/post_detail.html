@@ -79,7 +79,7 @@
 							<div class="overlay overlay-primary"></div>
 
 							<!-- to disable lazy loading, remove data-src and data-src-retina -->
-							<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_3.jpg' %}" data-src-retina="{% static 'uploads/720x420_3.jpg' %}" width="480" height="280" alt="">
+							<img src="{% static 'img/placeholder.gif' %}" data-src="{{ next_post.image_link }}" data-src-retina="{{ next_post.image_link }}" width="480" height="280" alt="">
 
 							<!--fallback for no javascript browsers-->
 							<noscript>

@@ -491,6 +491,7 @@ ul.entries {
   height: 100%;
 }
 .style-grid .entry-thumbnail img {
+  height: 120%;
   width: 120%;
   max-width: 120%;
   margin-left: -10%;

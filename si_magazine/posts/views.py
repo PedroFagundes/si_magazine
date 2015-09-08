@@ -1,8 +1,23 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import DetailView, ListView
+from django.core.urlresolvers import reverse
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 from .models import Posts, Categories, Tags
+from .forms import PostForm
+
+class NewPost(CreateView):
+	form_class   = PostForm
+	template_name = 'posts/new_post.html'
+
+	def get_success_url(self):
+		return reverse('home')
+
+class EditPost(UpdateView):
+	model         = Posts
+	fields        = '__all__'
+	template_name = 'posts/edit_post.html'
+	success_url   = '/panel/'
 
 class PostsList(ListView):
 	model         = Posts

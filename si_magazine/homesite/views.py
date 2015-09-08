@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.contrib.auth import logout as auth_logout
 
 from posts.models import Posts, Tags, Categories
@@ -10,23 +10,35 @@ class Home(ListView):
 	template_name = 'homesite/home.html'
 
 	def get_context_data(self, **kwargs):
-	    context                     = super(Home, self).get_context_data(**kwargs)
-	    context['posts']            = Posts.objects.all()
-	    context['1st_post']         = Posts.objects.all().order_by('-id')[0]
-	    context['2nd_post']         = Posts.objects.all().order_by('-id')[1]
-	    context['3rd_post']         = Posts.objects.all().order_by('-id')[2]
-	    context['4th_post']         = Posts.objects.all().order_by('-id')[3]
-	    context['5th_post']         = Posts.objects.all().order_by('-id')[4]
-	    context['6th_post']         = Posts.objects.all().order_by('-id')[5]
-	    context['7th_post']         = Posts.objects.all().order_by('-id')[6]
-	    context['8th_post']         = Posts.objects.all().order_by('-id')[7]
+	    context                      = super(Home, self).get_context_data(**kwargs)
+	    context['posts']             = Posts.objects.all()
+	    context['1st_post']          = Posts.objects.all().order_by('-id')[0]
+	    context['2nd_post']          = Posts.objects.all().order_by('-id')[1]
+	    context['3rd_post']          = Posts.objects.all().order_by('-id')[2]
+	    context['4th_post']          = Posts.objects.all().order_by('-id')[3]
+	    context['5th_post']          = Posts.objects.all().order_by('-id')[4]
+	    context['6th_post']          = Posts.objects.all().order_by('-id')[5]
+	    context['7th_post']          = Posts.objects.all().order_by('-id')[6]
+	    context['8th_post']          = Posts.objects.all().order_by('-id')[7]
 	    context['interesting_posts'] = Posts.objects.all().order_by('image_link')[:12]
 	    context['last_news_posts']   = Posts.objects.all().order_by('-id')[:10]
-	    context['most_liked_posts']   = Posts.objects.all().order_by('content')[:3]
-	    context['tags']             = Tags.objects.all()
-	    context['categories']       = Categories.objects.all()
+	    context['most_liked_posts']  = Posts.objects.all().order_by('content')[:3]
+	    context['tags']              = Tags.objects.all()
+	    context['categories']        = Categories.objects.all()
+	    return context
+
+class UserPanel(TemplateView):
+	template_name = 'homesite/user-panel.html'
+
+	def get_context_data(self, **kwargs):
+	    context             = super(UserPanel, self).get_context_data(**kwargs)
+	    if self.request.user.is_authenticated():
+	    	context['my_posts'] = Posts.objects.filter(author=self.request.user)
+	    else:
+	    	context['my_posts'] = 'Não ta logado'
 	    return context
 
 def Logout(request):
 	auth_logout(request)
 	return redirect('/')
+
