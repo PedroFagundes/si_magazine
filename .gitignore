@@ -1,5 +1,11 @@
-#PyCache files
+# PyCache files
 pycache/
 __*
+
+# For Ubuntu
 .bash_history
+bin/
+include/
+lib/
+local/
 logs/
