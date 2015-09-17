@@ -98,7 +98,7 @@
 								<strong class="subnav-header">Categorias</strong>
 								<ul class="subnav-full">
 									{% for category in categories %}
-										<li><a href="{% url 'posts_category_list' category.name %}">{{ category }}</a></li>
+										<li><a href="{% url 'posts_category_list' category.name %}">{{ category.name }}</a></li>
 									{% endfor %}
 								</ul>
 							</div>

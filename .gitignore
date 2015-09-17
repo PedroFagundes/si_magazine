@@ -1,2 +1,5 @@
 #PyCache files
 pycache/
+__*
+.bash_history
+logs/
