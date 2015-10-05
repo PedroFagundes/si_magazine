@@ -12,14 +12,12 @@ class Home(ListView):
 	def get_context_data(self, **kwargs):
 	    context                      = super(Home, self).get_context_data(**kwargs)
 	    context['posts']             = Posts.objects.all()
-	    context['1st_post']          = Posts.objects.all().order_by('-id')[0]
-	    context['2nd_post']          = Posts.objects.all().order_by('-id')[1]
-	    context['3rd_post']          = Posts.objects.all().order_by('-id')[2]
-	    context['4th_post']          = Posts.objects.all().order_by('-id')[3]
-	    context['5th_post']          = Posts.objects.all().order_by('-id')[4]
-	    context['6th_post']          = Posts.objects.all().order_by('-id')[5]
-	    context['7th_post']          = Posts.objects.all().order_by('-id')[6]
-	    context['8th_post']          = Posts.objects.all().order_by('-id')[7]
+	    if len(Posts.objects.all()) >= 8:
+	    	for i in range(1,9):
+	    		context['post_' + str(i)] = Posts.objects.all().order_by('-id')[i]
+	    else:
+	    	for i in range(1,len(Posts.objects.all())):
+	    		context['post_' + str(i)] = Posts.objects.all().order_by('-id')[i]
 	    context['interesting_posts'] = Posts.objects.all().order_by('image_link')[:12]
 	    context['last_news_posts']   = Posts.objects.all().order_by('-id')[:10]
 	    context['most_liked_posts']  = Posts.objects.all().order_by('content')[:3]

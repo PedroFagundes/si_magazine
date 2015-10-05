@@ -12,6 +12,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/', 'homesite.views.Logout', name='logout'),
     url(r'^posts/', include('posts.urls')),
-    url(r'^ckeditor/', include('ckeditor.urls')),
+    #url(r'^ckeditor/', include('ckeditor.urls')),
     url('', include('social.apps.django_app.urls', namespace='social')),
 ]

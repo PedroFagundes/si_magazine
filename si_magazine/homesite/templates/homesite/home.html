@@ -9,65 +9,71 @@
 
 					<div class="row">
 
-						<article class="entry style-grid style-hero hero-md-largest type-post col-md-8 col-lg-12 colheight-sm-1 colheight-md-2 colheight-lg-2 colheight-xl-2">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 1st_post.category.name %}">{{ 1st_post.category.name }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 1st_post.slug %}">{{ 1st_post.title }}</a> </h3>
-								<div class="entry-meta">
+						{% if post_1 %}
+							<article class="entry style-grid style-hero hero-md-largest type-post col-md-8 col-lg-12 colheight-sm-1 colheight-md-2 colheight-lg-2 colheight-xl-2">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_1.category.name %}">{{ post_1.category.name }}</a>
+								</div>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_1.slug %}">{{ post_1.title }}</a> </h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+										<span class="entry-author"> por <a href="blog.html">{{ post_1.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_1.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_1.image_link }}" data-src-retina="{{ post_1.image_link }}" width="680" height="452" alt="">
+									<noscript>
+										<img src="{% static 'uploads/680x452_2.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
+
+						{% if post_2 %}
+							<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_2.category.name %}">{{ post_2.category.name }}</a>
+								</div>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_2.slug %}">{{ post_2.title }}</a> </h3>
+									<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 1st_post.author.get_full_name }}</a></span>
-								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 1st_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 1st_post.image_link }}" data-src-retina="{{ 1st_post.image_link }}" width="680" height="452" alt="">
-								<noscript>
-									<img src="{% static 'uploads/680x452_2.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
+									<span class="entry-author"> por <a href="blog.html">{{ post_2.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_2.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_2.image_link }}" data-src-retina="{{ post_2.image_link }}" width="480" height="280" alt="">
+									<noscript>
+									<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 2nd_post.category.name %}">{{ 2nd_post.category }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 2nd_post.slug %}">{{ 2nd_post.title }}</a> </h3>
-								<div class="entry-meta">
-								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 2nd_post.author.get_full_name }}</a></span>
+						{% if post_3 %}
+							<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_3.category.name %}">{{ post_3.category.name }}</a>
 								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 2nd_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 2nd_post.image_link }}" data-src-retina="{{ 2nd_post.image_link }}" width="480" height="280" alt="">
-								<noscript>
-								<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
-
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 3rd_post.category.name %}">{{ 3rd_post.category.name }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 3rd_post.slug %}">{{ 3rd_post.title }}</a> </h3>
-								<div class="entry-meta">
-								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 3rd_post.author.get_full_name }}</a></span>
-								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 3rd_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 3rd_post.image_link }}" data-src-retina="{{ 3rd_post.image_link }}" width="480" height="280" alt="">
-								<noscript>
-								<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_3.slug %}">{{ post_3.title }}</a> </h3>
+									<div class="entry-meta">
+									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+									<span class="entry-author"> por <a href="blog.html">{{ post_3.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_3.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_3.image_link }}" data-src-retina="{{ post_3.image_link }}" width="480" height="280" alt="">
+									<noscript>
+									<img src="{% static 'uploads/480x280_1.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
 
 					</div><!--/.row-->
 
@@ -77,105 +83,115 @@
 
 					<div class="row">
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 4th_post.category.name %}">{{ 4th_post.category.name }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 4th_post.slug %}">{{ 4th_post.title }}</a> </h3>
-								<div class="entry-meta">
-								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 4th_post.author.get_full_name}}</a></span>
+						{% if post_4 %}
+							<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_4.category.name %}">{{ post_4.category.name }}</a>
 								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 4th_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_2.jpg' %}" data-src-retina="{% static 'uploads/720x420_2.jpg' %}" width="480" height="280" alt="">
-								<noscript>
-								<img src="{% static 'uploads/480x280_2.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
-
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 5th_post.category.name %}">{{ 5th_post.category }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 5th_post.slug %}">{{ 5th_post.title }}</a> </h3>
-								<div class="entry-meta">
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_4.slug %}">{{ post_4.title }}</a> </h3>
+									<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 5th_post.author.get_full_name }}</a></span>
-								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 5th_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 5th_post.image_link }}" data-src-retina="{{ 5th_post.image_link }}" width="680" height="452" alt="">
-								<noscript>
-									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
+									<span class="entry-author"> por <a href="blog.html">{{ post_4.author.get_full_name}}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_4.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{% static 'uploads/480x280_2.jpg' %}" data-src-retina="{% static 'uploads/720x420_2.jpg' %}" width="480" height="280" alt="">
+									<noscript>
+									<img src="{% static 'uploads/480x280_2.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
 
-						<article class="entry style-grid style-hero hero-lg-larger type-post col-md-4 col-lg-6 colheight-sm-1 colheight-lg-2">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 6th_post.category.name %}">{{ 6th_post.category }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 6th_post.slug %}">{{ 6th_post.title }}</a> </h3>
-								<div class="entry-meta">
-								<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-								<span class="entry-author"> por <a href="blog.html">{{ 6th_post.author.get_full_name }}</a></span>
+						{% if post_5 %}
+							<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_5.category.name %}">{{ post_5.category.name }}</a>
 								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 6th_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 6th_post.image_link }}" data-src-retina="{{ 6th_post.image_link }}" width="380" height="435" alt="">
-								<noscript>
-									<img src="{% static 'uploads/380x435_1.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_5.slug %}">{{ post_5.title }}</a> </h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+										<span class="entry-author"> por <a href="blog.html">{{ post_5.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_5.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_5.image_link }}" data-src-retina="{{ post_5.image_link }}" width="680" height="452" alt="">
+									<noscript>
+										<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 7th_post.category.name %}">{{ 7th_post.category }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 7th_post.slug %}">{{ 7th_post.title }}</a> </h3>
-								<div class="entry-meta">
+						{% if post_6 %}
+							<article class="entry style-grid style-hero hero-lg-larger type-post col-md-4 col-lg-6 colheight-sm-1 colheight-lg-2">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_6.category.name %}">{{ post_6.category.name }}</a>
+								</div>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_6.slug %}">{{ post_6.title }}</a> </h3>
+									<div class="entry-meta">
 									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 7th_post.author.get_full_name }}</a></span>
-								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 7th_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 7th_post.image_link }}" data-src-retina="{{ 7th_post.image_link }}" width="680" height="452" alt="">
-								<noscript>
-									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
+									<span class="entry-author"> por <a href="blog.html">{{ post_6.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_6.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_6.image_link }}" data-src-retina="{{ post_6.image_link }}" width="380" height="435" alt="">
+									<noscript>
+										<img src="{% static 'uploads/380x435_1.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
 
-						<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
-							<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
-								<a href="{% url 'posts_category_list' 8th_post.category.name %}">{{ 8th_post.category.name }}</a>
-							</div>
-							<header class="entry-header">
-								<h3 class="entry-title"><a href="{% url 'post_detail' 8th_post.slug %}">{{ 8th_post.title }}</a> </h3>
-								<div class="entry-meta">
-									<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
-									<span class="entry-author"> por <a href="blog.html">{{ 8th_post.author.get_full_name }}</a></span>
+						{% if post_7 %}
+							<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_7.category.name %}">{{ post_7.category.name }}</a>
 								</div>
-							</header>
-							<figure class="entry-thumbnail">
-								<a href="{% url 'post_detail' 8th_post.slug %}" class="overlay overlay-primary"></a>
-								<img src="{% static 'img/placeholder.gif' %}" data-src="{{ 8th_post.image_link }}" data-src-retina="{{ 8th_post.image_link }}" width="680" height="452" alt="">
-								<noscript>
-									<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
-								</noscript>
-							</figure>
-						</article>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_7.slug %}">{{ post_7.title }}</a> </h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+										<span class="entry-author"> por <a href="blog.html">{{ post_7.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_7.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_7.image_link }}" data-src-retina="{{ post_7.image_link }}" width="680" height="452" alt="">
+									<noscript>
+										<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
+
+						{% if post_ %}
+							<article class="entry style-grid style-hero type-post col-md-4 col-lg-6 colheight-sm-1">
+								<div class="ribbon ribbon-pulled ribbon-small ribbon-highlight">
+									<a href="{% url 'posts_category_list' post_8.category.name %}">{{ post_8.category.name }}</a>
+								</div>
+								<header class="entry-header">
+									<h3 class="entry-title"><a href="{% url 'post_detail' post_8.slug %}">{{ post_8.title }}</a> </h3>
+									<div class="entry-meta">
+										<span class="entry-date"><a href="blog.html"><time datetime="2013-07-04T23:26:34+00:00">20 horas atrás</time></a></span>
+										<span class="entry-author"> por <a href="blog.html">{{ post_8.author.get_full_name }}</a></span>
+									</div>
+								</header>
+								<figure class="entry-thumbnail">
+									<a href="{% url 'post_detail' post_8.slug %}" class="overlay overlay-primary"></a>
+									<img src="{% static 'img/placeholder.gif' %}" data-src="{{ post_8.image_link }}" data-src-retina="{{ post_8.image_link }}" width="680" height="452" alt="">
+									<noscript>
+										<img src="{% static 'uploads/680x452_4.jpg' %}" alt="">
+									</noscript>
+								</figure>
+							</article>
+						{% endif %}
 
 
 					</div><!--/.row-->
