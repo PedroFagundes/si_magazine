@@ -137,7 +137,7 @@
 						</figure>
 
 						<div class="entry-meta indented">
-							<span class="author">por <a href="blog.html">{{ post.author }}</a></span>
+							<span class="author">por <a href="blog.html">{{ post.author.get_full_name() }}</a></span>
 							<span class="entry-date"><a href="blog.html">em <time datetime="{{ post.pub_date }}">{{ post.pub_date }}</time></a></span>
 							<span class="category">em <a href="{% url 'posts_category_list' post.category.name %}">{{ post.category.name }}</a></span>
 						</div>
