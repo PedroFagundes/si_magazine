@@ -7,7 +7,7 @@ class PostForm(ModelForm):
     class Meta:
         model   = Posts
         fields  = '__all__'
-        exclude = ('slug', 'is_active', 'pub_date', 'pub_hour', 'author',)
+        exclude = ('slug', 'is_active', 'pub_date', 'pub_hour',)
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
             'image_link': TextInput(attrs={'class': 'form-control'}),

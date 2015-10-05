@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'og4dtgmngi5k15ng7q@6vskqvq$=fkae_zs!d3lbf4uco3yuf='
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['fasainforma.aethersolucoes.com.br']
 
@@ -61,8 +61,11 @@ WSGI_APPLICATION = 'si_magazine.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fasa_informa',
+	'USER': 'fasainforma',
+	'PASSWORD': 'fasainforma',
+	'HOST': 'localhost',
     }
 }
 

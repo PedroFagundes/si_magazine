@@ -248,7 +248,7 @@
 								<div class="tagcloud">
 
 									{% for tag in tags %}
-										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.label }}</a>
+										<a href="{% url 'posts_tag_list' tag.name %}">{{ tag.name }}</a>
 									{% endfor %}
 
 								</div>
@@ -262,7 +262,7 @@
 								<div class="tagcloud">
 
 									{% for category in categories %}
-										<a href="{% url 'posts_category_list' category.name %}">{{ category.label }}</a>
+										<a href="{% url 'posts_category_list' category.name %}">{{ category.name }}</a>
 									{% endfor %}
 
 								</div>
