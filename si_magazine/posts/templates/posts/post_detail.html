@@ -2,27 +2,6 @@
 {% load staticfiles %}
 	{% block content %}
 
-	<div id="fb-root"></div>
-		<script>
-			  window.fbAsyncInit = function() {
-			  FB.init({
-			    appId      : '815093458588258', // App ID
-			    channelUrl : 'http://fasainforma.aethersolucoes.com.br', // Channel File
-			    status     : true, // check login status
-			    cookie     : true, // enable cookies to allow the server to access the session
-			    xfbml      : true  // parse XFBML
-			  });
-			};
-
-			(function(d){
-			  var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-			  if (d.getElementById(id)) {return;}
-			  js = d.createElement('script'); js.id = id; js.async = true;
-			  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=815093458588258";
-			  ref.parentNode.insertBefore(js, ref);
-			}(document));
-		</script>
-
 	<!-- FACEBOOK COMMENTS PLUGIN -->
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -155,6 +134,45 @@
 
 					</article>
 
+					<div class="after-entry indented">
+
+						<hr>
+
+
+						<aside class="widget post-tags">
+							<i class="icon-tags"></i> Tags:
+							{% for tag in post.tags.all %}
+								<a href="#">{{ tag.name }}</a>
+							{% endfor %}
+						</aside>
+
+						<hr>
+
+						<aside class="widget widget-author media">
+
+							<figure class="entry-author-avatar media-object avatar pull-left">
+								<!-- to disable lazy loading, remove data-src and data-src-retina -->
+								<img style="opacity: 1;" src="../uploads/230x230_4.jpg" data-src="../uploads/230x230_4.jpg" data-src-retina="../uploads/460x460_4.jpg" class="img-circle" alt="" height="230" width="230">
+
+								<!--fallback for no javascript browsers-->
+								<noscript>
+									<img src="../uploads/230x230_4.jpg" alt="">
+								</noscript>
+							</figure>
+
+						</aside>
+
+						<aside class="widget">
+							Compartilhar:
+							<a href="#" class="" onclick="window.open(
+								'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+								'facebook-share-dialog',
+								'width=626,height=436');
+								return false;"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-facebook icon-light"></i></span></a>
+						</aside>
+
+					</div>
+
 					<hr>
 
 					<div id="comments" class="comments-area indented">
@@ -162,166 +180,7 @@
 						<h4 class="comments-title">Comentários</h4>
 						<hr>
 
-						<div class="fb-comments"
-						data-href="{{ my_object.slug }}"
-						data-num-posts="5"
-						data-width="589">
-						</div>
-
-						<!--<ol class="media-list comment-list">
-							<li class="media comment">
-
-								<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-								<div class="media-body">
-
-									<h4 class="media-heading author-vcard">
-										<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-										<span class="comment-meta commentmetadata">on <a href="#">July 8, 2013 at 7:46 am</a></span>
-									</h4>
-									<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-								</div>
-
-								<ol class="media-list">
-
-									<li class="media comment">
-
-										<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-										<div class="media-body">
-
-											<h4 class="media-heading author-vcard">
-												<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-												<span class="comment-meta commentmetadata"> on <a href="#">July 8, 2013 at 7:46 am</a></span>
-											</h4>
-
-											<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-										</div>
-
-									</li>
-
-									<li class="media comment">
-
-										<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-										<div class="media-body">
-
-											<h4 class="media-heading author-vcard">
-												<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-												<span class="comment-meta commentmetadata"> on <a href="#">July 8, 2013 at 7:46 am</a></span>
-											</h4>
-
-											<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-										</div>
-
-										<ol class="media-list">
-											<li class="media comment">
-
-												<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-												<div class="media-body">
-
-													<h4 class="media-heading author-vcard">
-														<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-														<span class="comment-meta commentmetadata">on <a href="#">July 8, 2013 at 7:46 am</a></span>
-													</h4>
-
-													<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-												</div>
-
-											</li>
-
-											<li class="media comment">
-
-												<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-												<div class="media-body">
-
-													<h4 class="media-heading author-vcard">
-														<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-														<span class="comment-meta commentmetadata">on <a href="#">July 8, 2013 at 7:46 am</a></span>
-													</h4>
-
-													<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-												</div>
-
-											</li>
-
-										</ol>
-
-									</li>
-
-								</ol>
-
-							</li>
-							<li class="media comment">
-
-								<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-								<div class="media-body">
-
-									<h4 class="media-heading author-vcard">
-										<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-										<span class="comment-meta commentmetadata">on <a href="#">July 8, 2013 at 7:46 am</a></span>
-									</h4>
-									<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-								</div>
-
-							</li>
-							<li class="media comment">
-
-								<img src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=74" width="74" height="74" alt="" class="avatar media-object pull-left img-circle">
-
-								<div class="media-body">
-
-									<h4 class="media-heading author-vcard">
-										<cite class="fn"><a href="#" rel="external nofollow" class="url">Mr John Doe</a></cite> 
-										<span class="comment-meta commentmetadata">on <a href="#">July 8, 2013 at 7:46 am</a></span>
-									</h4>
-									<p>Hi, this is a comment. enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
-
-								</div>
-
-							</li>
-						</ol>
-
-						<div id="respond" class="comments-respond">
-
-							<h3 id="reply-title" class="comment-reply-title">Deixa um comentário</h3>
-
-							<form action="#" class="form-inline row" method="post" id="commentform">
-
-								<div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<label class="sr-only" for="inputName">Nome</label>
-									<input class="form-control" id="inputName" name="author" type="text" value="" aria-required="true" placeholder="Seu Nome">
-								</div>
-
-								<div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<label class="sr-only" for="inputEmail">E-mail</label>
-									<input class="form-control" id="inputEmail" name="author" type="text" value="" aria-required="true" placeholder="Seu E-mail">
-								</div>
-
-								<div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
-									<label class="sr-only" for="inputWebsite">Website</label>
-									<input class="form-control" id="inputWebsite" name="author" type="text" value="" aria-required="true" placeholder="Seu Website">
-								</div>
-
-								<div class="form-group col-lg-12 col-md-12 col-sm-12">
-									<label class="sr-only" for="inputMessage">Messagem</label>
-									<textarea class="form-control" id="inputMessage" name="message" rows="8" aria-required="true" placeholder="Seu comentário"></textarea>
-								</div>
-
-								<div class="form-group col-lg-12 col-md-12 col-sm-12">
-									<button class="btn btn-primary" name="submit" id="submit">Enviar comentário</button>
-								</div>
-
-							</form>
-
-						</div>--><!-- #respond -->
+						<div class="fb-comments" data-href="http://fasainforma.aethersolucoes.com.br/posts/{{ post.slug }}" data-width="589" data-numposts="5"></div>
 
 					</div><!--/#comments-->
 
