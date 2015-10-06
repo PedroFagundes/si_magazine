@@ -8,7 +8,9 @@
 		{% load staticfiles %}
 		<meta charset="utf-8">
 		<link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon" />
-		<title>FASA Informa - O portal de notícias feito por alunos para alunos</title>
+		{% block page_title %}
+
+		{% endblock page_title %}
 		<meta name="description" content="">
 
 		<!-- Mobile Devices Viewport Resset-->

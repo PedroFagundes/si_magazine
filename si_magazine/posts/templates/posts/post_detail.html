@@ -1,5 +1,8 @@
 {% extends "homesite/base.html" %}
 {% load staticfiles %}
+	{% block page_title %}
+		<title>FASA Informa - {{ post.title }}</title>
+	{% endblock page_title %}
 	{% block content %}
 
 	<!-- FACEBOOK COMMENTS PLUGIN -->
