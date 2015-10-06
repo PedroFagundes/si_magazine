@@ -13,10 +13,10 @@ class Home(ListView):
 	    context                      = super(Home, self).get_context_data(**kwargs)
 	    context['posts']             = Posts.objects.all()
 	    if len(Posts.objects.all()) >= 8:
-	    	for i in range(1,9):
+	    	for i in range(0,8):
 	    		context['post_' + str(i)] = Posts.objects.all().order_by('-id')[i]
 	    else:
-	    	for i in range(1,len(Posts.objects.all())):
+	    	for i in range(0,len(Posts.objects.all())):
 	    		context['post_' + str(i)] = Posts.objects.all().order_by('-id')[i]
 	    context['interesting_posts'] = Posts.objects.all().order_by('image_link')[:12]
 	    context['last_news_posts']   = Posts.objects.all().order_by('-id')[:10]
