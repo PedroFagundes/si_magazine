@@ -1,5 +1,7 @@
 {% extends "homesite/base.html" %}
-
+{% block page_title %}
+	<title>SI Informa - Painel do Usuário</title>
+{% endblock page_title %}
 {% block user_greetings %}
 	{% if user.is_authenticated %}
 		<ul class="nav navbar-nav">
@@ -49,7 +51,7 @@
 		{% else %}
 			<h1>Você precisa estar logado para acessar o painel.</h1>
 			<div class="login padding-bot">
-				Acesse com <i class='icon-google-plus'></i> <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Google</a> | <i class='icon-twitter'></i> <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Twitter</a> | <i class='icon-facebook'></i> <a href="">Facebook</a>
+				Acesse com <i class='icon-google-plus'></i> <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Google</a> | <i class='icon-twitter'></i> <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}">Twitter</a> | <i class='icon-facebook'></i> <a href="{% url 'social:begin' 'facebook' %}?next={{request.path }}">Facebook</a>
 				<br>
 				<span>Não tem uma conta? Crie uma agora mesmo</span>
 			</div>
